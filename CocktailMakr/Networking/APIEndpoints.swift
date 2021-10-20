@@ -17,7 +17,7 @@ enum APIEndpoints {
     case getIngredientByID(String)
     case getCategories
     
-    func url() -> String {
+    func urlString() -> String {
         switch self {
         case .getDrinkByID(let drinkID):
             return composeURL(path: "/lookup.php", params: ["i": drinkID])

@@ -16,7 +16,6 @@ struct Drink {
     let isAlcoholic: Bool
     let category: String?
     let glassType: String?
-//    let thumbnailURL: URL?
     let imageURL: URL?
     
     enum CodingKeys: String, CodingKey {
@@ -26,7 +25,6 @@ struct Drink {
         case isAlcoholic = "strAlcoholic"
         case category = "strCategory"
         case glassType = "strGlass"
-//        case thumbnailURL = "strDrinkThumb"
         case imageURL = "strDrinkThumb"
         
     }
@@ -43,7 +41,6 @@ extension Drink: Decodable {
         isAlcoholic = try values.decode(String.self, forKey: CodingKeys.isAlcoholic) == "Alcoholic"
         category = try values.decode(String.self, forKey: CodingKeys.category)
         glassType = try values.decode(String.self, forKey: CodingKeys.glassType)
-//        thumbnailURL = try values.decode(String.self, forKey: CodingKeys.thumbnailURL)
         imageURL = try values.decode(URL.self, forKey: CodingKeys.imageURL)
     }
 }

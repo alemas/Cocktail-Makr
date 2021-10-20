@@ -9,27 +9,27 @@ import Foundation
 
 enum APIEndpoints {
     
-    case getDrinkByID(String)
-    case getDrinksForIngredient(String)
+    case getDrinkWithID(String)
     case getDrinksForSearchTerm(String)
-    case getDrinksForCategory(String)
+    case getDrinkPreviewsForIngredient(String)
+    case getDrinkPreviewsForCategory(String)
     case getIngredients
-    case getIngredientByID(String)
+    case getIngredientWithID(String)
     case getCategories
     
     func urlString() -> String {
         switch self {
-        case .getDrinkByID(let drinkID):
+        case .getDrinkWithID(let drinkID):
             return composeURL(path: "/lookup.php", params: ["i": drinkID])
-        case .getDrinksForIngredient(let ingredient):
-            return composeURL(path: "/filter.php", params: ["i": ingredient])
         case .getDrinksForSearchTerm(let searchTerm):
             return composeURL(path: "/search.php", params: ["s": searchTerm])
-        case .getDrinksForCategory(let category):
+        case .getDrinkPreviewsForIngredient(let ingredient):
+            return composeURL(path: "/filter.php", params: ["i": ingredient])
+        case .getDrinkPreviewsForCategory(let category):
             return composeURL(path: "/category.php", params: ["c": category])
         case .getIngredients:
             return composeURL(path: "/list.php", params: ["i": "list"])
-        case .getIngredientByID(let ingredientID):
+        case .getIngredientWithID(let ingredientID):
             return composeURL(path: "/lookup.php", params: ["iid": ingredientID])
         case .getCategories:
             return composeURL(path: "/list.php", params: ["c": "list"])

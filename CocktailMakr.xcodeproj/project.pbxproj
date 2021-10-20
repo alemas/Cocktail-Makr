@@ -29,6 +29,8 @@
 		53894990271F570F0024DB5A /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389498E271F570F0024DB5A /* HeaderCollectionReusableView.swift */; };
 		53894991271F570F0024DB5A /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5389498F271F570F0024DB5A /* HeaderCollectionReusableView.xib */; };
 		53894994271F5DE00024DB5A /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53894993271F5DE00024DB5A /* CollectionViewCell.swift */; };
+		53EC614A271F8D7700D3D769 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EC6149271F8D7700D3D769 /* DataManager.swift */; };
+		53EC614C271F9BA000D3D769 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EC614B271F9BA000D3D769 /* APIEndpoints.swift */; };
 		833C3C2465293233747AA1F2 /* Pods_CocktailMakr_CocktailMakrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C76B96752B8FD79E686B5B5B /* Pods_CocktailMakr_CocktailMakrUITests.framework */; };
 		8CE6CDAA9BC13509E323BF6F /* Pods_CocktailMakr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CD7113EE634345C3E30C24 /* Pods_CocktailMakr.framework */; };
 		AF7F7C875BD246B85CE51C17 /* Pods_CocktailMakrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8240974C4267D470BE012858 /* Pods_CocktailMakrTests.framework */; };
@@ -79,6 +81,8 @@
 		5389498E271F570F0024DB5A /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		5389498F271F570F0024DB5A /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		53894993271F5DE00024DB5A /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		53EC6149271F8D7700D3D769 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		53EC614B271F9BA000D3D769 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		67598C6B590D124E76502825 /* Pods-CocktailMakr-CocktailMakrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocktailMakr-CocktailMakrUITests.release.xcconfig"; path = "Target Support Files/Pods-CocktailMakr-CocktailMakrUITests/Pods-CocktailMakr-CocktailMakrUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6C415DB0E14AA1CE6E5039CD /* Pods-CocktailMakr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocktailMakr.debug.xcconfig"; path = "Target Support Files/Pods-CocktailMakr/Pods-CocktailMakr.debug.xcconfig"; sourceTree = "<group>"; };
 		7593BB801820E83EE2F146DE /* Pods-CocktailMakr-CocktailMakrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocktailMakr-CocktailMakrUITests.debug.xcconfig"; path = "Target Support Files/Pods-CocktailMakr-CocktailMakrUITests/Pods-CocktailMakr-CocktailMakrUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,7 +160,7 @@
 				53674E21271E615500E8B87A /* View Controllers */,
 				53674E18271DE3B200E8B87A /* Models */,
 				53674E1D271E5FD600E8B87A /* Configuration */,
-				53894995271F87C90024DB5A /* Managers */,
+				53894995271F87C90024DB5A /* Networking */,
 				53894981271EFF030024DB5A /* Extensions */,
 				53674E24271E61D200E8B87A /* Storyboards */,
 				53674E22271E616800E8B87A /* Resources */,
@@ -290,11 +294,13 @@
 			path = "Collection View Cells";
 			sourceTree = "<group>";
 		};
-		53894995271F87C90024DB5A /* Managers */ = {
+		53894995271F87C90024DB5A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				53EC6149271F8D7700D3D769 /* DataManager.swift */,
+				53EC614B271F9BA000D3D769 /* APIEndpoints.swift */,
 			);
-			path = Managers;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		CD1C50EF46DB38D1598BC191 /* Pods */ = {
@@ -307,7 +313,6 @@
 				38F1ED0B265FBCAD48E6A5F9 /* Pods-CocktailMakrTests.debug.xcconfig */,
 				DFA5BFBDE632D700FCA31BBB /* Pods-CocktailMakrTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -573,6 +578,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53674E1F271E5FFB00E8B87A /* Configuration.swift in Sources */,
+				53EC614C271F9BA000D3D769 /* APIEndpoints.swift in Sources */,
 				53894990271F570F0024DB5A /* HeaderCollectionReusableView.swift in Sources */,
 				53894994271F5DE00024DB5A /* CollectionViewCell.swift in Sources */,
 				53674DED271DE28D00E8B87A /* ViewController.swift in Sources */,
@@ -583,6 +589,7 @@
 				53894986271F435F0024DB5A /* CategoryCollectionViewCell.swift in Sources */,
 				53674E1A271DE41000E8B87A /* Drink.swift in Sources */,
 				53894983271EFF2E0024DB5A /* UICollectionReusableView+Identifier.swift in Sources */,
+				53EC614A271F8D7700D3D769 /* DataManager.swift in Sources */,
 				5389497D271EF9710024DB5A /* HomeActionCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

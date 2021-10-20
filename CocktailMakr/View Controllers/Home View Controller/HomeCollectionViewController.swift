@@ -18,6 +18,9 @@ class HomeCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(APIEndpoints.getCategories.url())
+        print(APIEndpoints.getIngredientByID("112").url())
+        
         title = "Home"
         collectionView.register(UINib(nibName: "HomeActionCollectionViewCell", bundle: nil),
                                 forCellWithReuseIdentifier: HomeActionCollectionViewCell.identifier)

@@ -14,7 +14,7 @@ enum APIEndpoints {
     case getDrinkPreviewsForIngredient(String)
     case getDrinkPreviewsForCategory(String)
     case getIngredients
-    case getIngredientWithID(String)
+    case getIngredientForSearchTerm(String)
     case getCategories
     
     func urlString() -> String {
@@ -26,11 +26,11 @@ enum APIEndpoints {
         case .getDrinkPreviewsForIngredient(let ingredient):
             return composeURL(path: "/filter.php", params: ["i": ingredient])
         case .getDrinkPreviewsForCategory(let category):
-            return composeURL(path: "/category.php", params: ["c": category])
+            return composeURL(path: "/filter.php", params: ["c": category])
         case .getIngredients:
             return composeURL(path: "/list.php", params: ["i": "list"])
-        case .getIngredientWithID(let ingredientID):
-            return composeURL(path: "/lookup.php", params: ["iid": ingredientID])
+        case .getIngredientForSearchTerm(let searchTerm):
+            return composeURL(path: "/search.php", params: ["i": searchTerm])
         case .getCategories:
             return composeURL(path: "/list.php", params: ["c": "list"])
         }

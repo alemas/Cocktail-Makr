@@ -11,7 +11,7 @@ import UIKit
 
 class APIRequest {
     
-    static func get(url: URL) -> Observable<Data> {
+    static func get(url: URL) -> Observable<Data?> {
         return Observable.create { observer in
             let request = URLRequest(url: url)
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -19,7 +19,7 @@ class APIRequest {
                     let statusCode = httpResponse.statusCode
                     // 200 to 399 status codes means everything went well
                     if (200...399).contains(statusCode) {
-                        observer.onNext(data ?? Data())
+                        observer.onNext(data)
                     } else {
                         observer.onError(error!)
                     }

@@ -10,6 +10,7 @@ import UIKit
 class HeaderCollectionReusableView: UICollectionReusableView {
 
     @IBOutlet var lblTitle: UILabel!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     override class var identifier: String { "HeaderCollectionReusableView" }
     

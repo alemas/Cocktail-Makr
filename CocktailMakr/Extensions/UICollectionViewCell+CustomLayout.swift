@@ -1,15 +1,15 @@
 //
-//  CollectionViewCell.swift
+//  UICollectionViewCell+Layout.swift
 //  CocktailMakr
 //
-//  Created by Mateus Reckziegel on 19/10/21.
+//  Created by Mateus Reckziegel on 20/10/21.
 //
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+extension UICollectionViewCell {
     
-    func setLayout() {
+    func setCustomLayout() {
         layer.cornerRadius = 15
         layer.masksToBounds = false
         

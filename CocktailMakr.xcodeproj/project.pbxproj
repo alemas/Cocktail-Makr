@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		53674DE9271DE28D00E8B87A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53674DE8271DE28D00E8B87A /* AppDelegate.swift */; };
 		53674DEB271DE28D00E8B87A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53674DEA271DE28D00E8B87A /* SceneDelegate.swift */; };
-		53674DED271DE28D00E8B87A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53674DEC271DE28D00E8B87A /* ViewController.swift */; };
 		53674DF0271DE28D00E8B87A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53674DEE271DE28D00E8B87A /* Main.storyboard */; };
 		53674DF2271DE28E00E8B87A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53674DF1271DE28E00E8B87A /* Assets.xcassets */; };
 		53674DF5271DE28E00E8B87A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53674DF3271DE28E00E8B87A /* LaunchScreen.storyboard */; };
@@ -17,7 +16,6 @@
 		53674E0A271DE28E00E8B87A /* CocktailMakrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53674E09271DE28E00E8B87A /* CocktailMakrUITests.swift */; };
 		53674E0C271DE28E00E8B87A /* CocktailMakrUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53674E0B271DE28E00E8B87A /* CocktailMakrUITestsLaunchTests.swift */; };
 		53674E1A271DE41000E8B87A /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53674E19271DE41000E8B87A /* Drink.swift */; };
-		53674E1C271DF3EE00E8B87A /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53674E1B271DF3EE00E8B87A /* JSONParser.swift */; };
 		53674E1F271E5FFB00E8B87A /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53674E1E271E5FFB00E8B87A /* Configuration.swift */; };
 		53674E29271E69EB00E8B87A /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53674E28271E69EB00E8B87A /* HomeCollectionViewController.swift */; };
 		5389497D271EF9710024DB5A /* HomeActionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389497B271EF9710024DB5A /* HomeActionCollectionViewCell.swift */; };
@@ -28,11 +26,14 @@
 		53894987271F435F0024DB5A /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53894985271F435E0024DB5A /* CategoryCollectionViewCell.xib */; };
 		53894990271F570F0024DB5A /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389498E271F570F0024DB5A /* HeaderCollectionReusableView.swift */; };
 		53894991271F570F0024DB5A /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5389498F271F570F0024DB5A /* HeaderCollectionReusableView.xib */; };
-		53894994271F5DE00024DB5A /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53894993271F5DE00024DB5A /* CollectionViewCell.swift */; };
 		53B4DA2127205FDB00A7E637 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B4DA2027205FDB00A7E637 /* APIClient.swift */; };
 		53B4DA232720650C00A7E637 /* DrinkPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B4DA222720650C00A7E637 /* DrinkPreview.swift */; };
 		53B4DA25272067C900A7E637 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B4DA24272067C900A7E637 /* Ingredient.swift */; };
-		53EC614A271F8D7700D3D769 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EC6149271F8D7700D3D769 /* DataManager.swift */; };
+		53B4DA292720DC4800A7E637 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B4DA282720DC4800A7E637 /* CollectionViewController.swift */; };
+		53B4DA2B2720EBD900A7E637 /* UICollectionViewCell+CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B4DA2A2720EBD900A7E637 /* UICollectionViewCell+CustomLayout.swift */; };
+		53B4DA2E2720ECD300A7E637 /* DrinkPreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B4DA2C2720ECD300A7E637 /* DrinkPreviewCollectionViewCell.swift */; };
+		53B4DA2F2720ECD300A7E637 /* DrinkPreviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53B4DA2D2720ECD300A7E637 /* DrinkPreviewCollectionViewCell.xib */; };
+		53B4DA312720F36F00A7E637 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B4DA302720F36F00A7E637 /* Category.swift */; };
 		53EC614C271F9BA000D3D769 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EC614B271F9BA000D3D769 /* APIEndpoints.swift */; };
 		53EC614E271FB4CD00D3D769 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EC614D271FB4CD00D3D769 /* APIRequest.swift */; };
 		833C3C2465293233747AA1F2 /* Pods_CocktailMakr_CocktailMakrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C76B96752B8FD79E686B5B5B /* Pods_CocktailMakr_CocktailMakrUITests.framework */; };
@@ -62,7 +63,6 @@
 		53674DE5271DE28D00E8B87A /* CocktailMakr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocktailMakr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53674DE8271DE28D00E8B87A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53674DEA271DE28D00E8B87A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		53674DEC271DE28D00E8B87A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		53674DEF271DE28D00E8B87A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		53674DF1271DE28E00E8B87A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53674DF4271DE28E00E8B87A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,7 +73,6 @@
 		53674E09271DE28E00E8B87A /* CocktailMakrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailMakrUITests.swift; sourceTree = "<group>"; };
 		53674E0B271DE28E00E8B87A /* CocktailMakrUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailMakrUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		53674E19271DE41000E8B87A /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
-		53674E1B271DF3EE00E8B87A /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		53674E1E271E5FFB00E8B87A /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		53674E28271E69EB00E8B87A /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		5389497B271EF9710024DB5A /* HomeActionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeActionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -84,11 +83,14 @@
 		53894985271F435E0024DB5A /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		5389498E271F570F0024DB5A /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		5389498F271F570F0024DB5A /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
-		53894993271F5DE00024DB5A /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		53B4DA2027205FDB00A7E637 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		53B4DA222720650C00A7E637 /* DrinkPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkPreview.swift; sourceTree = "<group>"; };
 		53B4DA24272067C900A7E637 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
-		53EC6149271F8D7700D3D769 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		53B4DA282720DC4800A7E637 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		53B4DA2A2720EBD900A7E637 /* UICollectionViewCell+CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+CustomLayout.swift"; sourceTree = "<group>"; };
+		53B4DA2C2720ECD300A7E637 /* DrinkPreviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkPreviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		53B4DA2D2720ECD300A7E637 /* DrinkPreviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrinkPreviewCollectionViewCell.xib; sourceTree = "<group>"; };
+		53B4DA302720F36F00A7E637 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		53EC614B271F9BA000D3D769 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		53EC614D271FB4CD00D3D769 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		67598C6B590D124E76502825 /* Pods-CocktailMakr-CocktailMakrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocktailMakr-CocktailMakrUITests.release.xcconfig"; path = "Target Support Files/Pods-CocktailMakr-CocktailMakrUITests/Pods-CocktailMakr-CocktailMakrUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -173,8 +175,6 @@
 				53674E24271E61D200E8B87A /* Storyboards */,
 				53674E22271E616800E8B87A /* Resources */,
 				53674E23271E61A000E8B87A /* Supporting Files */,
-				53674DEC271DE28D00E8B87A /* ViewController.swift */,
-				53674E1B271DF3EE00E8B87A /* JSONParser.swift */,
 			);
 			path = CocktailMakr;
 			sourceTree = "<group>";
@@ -202,6 +202,7 @@
 				53674E19271DE41000E8B87A /* Drink.swift */,
 				53B4DA222720650C00A7E637 /* DrinkPreview.swift */,
 				53B4DA24272067C900A7E637 /* Ingredient.swift */,
+				53B4DA302720F36F00A7E637 /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -226,9 +227,11 @@
 		53674E21271E615500E8B87A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				53B4DA272720DC2C00A7E637 /* Collection View Controllers */,
 				53894992271F5DAE0024DB5A /* Collection View Cells */,
 				5389498D271F56ED0024DB5A /* Collection View Headers */,
 				53674E27271E659300E8B87A /* Home View Controller */,
+				53B4DA322720F76E00A7E637 /* Drinks View Controller */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				53894982271EFF2E0024DB5A /* UICollectionReusableView+Identifier.swift */,
+				53B4DA2A2720EBD900A7E637 /* UICollectionViewCell+CustomLayout.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -299,7 +303,8 @@
 		53894992271F5DAE0024DB5A /* Collection View Cells */ = {
 			isa = PBXGroup;
 			children = (
-				53894993271F5DE00024DB5A /* CollectionViewCell.swift */,
+				53B4DA2C2720ECD300A7E637 /* DrinkPreviewCollectionViewCell.swift */,
+				53B4DA2D2720ECD300A7E637 /* DrinkPreviewCollectionViewCell.xib */,
 			);
 			path = "Collection View Cells";
 			sourceTree = "<group>";
@@ -307,12 +312,26 @@
 		53894995271F87C90024DB5A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				53EC6149271F8D7700D3D769 /* DataManager.swift */,
 				53EC614B271F9BA000D3D769 /* APIEndpoints.swift */,
 				53EC614D271FB4CD00D3D769 /* APIRequest.swift */,
 				53B4DA2027205FDB00A7E637 /* APIClient.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		53B4DA272720DC2C00A7E637 /* Collection View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				53B4DA282720DC4800A7E637 /* CollectionViewController.swift */,
+			);
+			path = "Collection View Controllers";
+			sourceTree = "<group>";
+		};
+		53B4DA322720F76E00A7E637 /* Drinks View Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Drinks View Controller";
 			sourceTree = "<group>";
 		};
 		CD1C50EF46DB38D1598BC191 /* Pods */ = {
@@ -442,6 +461,7 @@
 				53894987271F435F0024DB5A /* CategoryCollectionViewCell.xib in Resources */,
 				53894980271EF9E80024DB5A /* Colors.xcassets in Resources */,
 				53674DF5271DE28E00E8B87A /* LaunchScreen.storyboard in Resources */,
+				53B4DA2F2720ECD300A7E637 /* DrinkPreviewCollectionViewCell.xib in Resources */,
 				53674DF2271DE28E00E8B87A /* Assets.xcassets in Resources */,
 				5389497E271EF9710024DB5A /* HomeActionCollectionViewCell.xib in Resources */,
 				53674DF0271DE28D00E8B87A /* Main.storyboard in Resources */,
@@ -590,22 +610,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				53674E1F271E5FFB00E8B87A /* Configuration.swift in Sources */,
+				53B4DA2E2720ECD300A7E637 /* DrinkPreviewCollectionViewCell.swift in Sources */,
 				53EC614C271F9BA000D3D769 /* APIEndpoints.swift in Sources */,
 				53B4DA25272067C900A7E637 /* Ingredient.swift in Sources */,
 				53894990271F570F0024DB5A /* HeaderCollectionReusableView.swift in Sources */,
+				53B4DA312720F36F00A7E637 /* Category.swift in Sources */,
+				53B4DA292720DC4800A7E637 /* CollectionViewController.swift in Sources */,
 				53B4DA2127205FDB00A7E637 /* APIClient.swift in Sources */,
-				53894994271F5DE00024DB5A /* CollectionViewCell.swift in Sources */,
-				53674DED271DE28D00E8B87A /* ViewController.swift in Sources */,
-				53674E1C271DF3EE00E8B87A /* JSONParser.swift in Sources */,
 				53674DE9271DE28D00E8B87A /* AppDelegate.swift in Sources */,
 				53B4DA232720650C00A7E637 /* DrinkPreview.swift in Sources */,
 				53674E29271E69EB00E8B87A /* HomeCollectionViewController.swift in Sources */,
 				53EC614E271FB4CD00D3D769 /* APIRequest.swift in Sources */,
 				53674DEB271DE28D00E8B87A /* SceneDelegate.swift in Sources */,
 				53894986271F435F0024DB5A /* CategoryCollectionViewCell.swift in Sources */,
+				53B4DA2B2720EBD900A7E637 /* UICollectionViewCell+CustomLayout.swift in Sources */,
 				53674E1A271DE41000E8B87A /* Drink.swift in Sources */,
 				53894983271EFF2E0024DB5A /* UICollectionReusableView+Identifier.swift in Sources */,
-				53EC614A271F8D7700D3D769 /* DataManager.swift in Sources */,
 				5389497D271EF9710024DB5A /* HomeActionCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

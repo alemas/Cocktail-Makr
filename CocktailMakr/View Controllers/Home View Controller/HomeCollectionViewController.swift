@@ -8,73 +8,35 @@
 import UIKit
 import RxSwift
 
-class HomeCollectionViewController: UICollectionViewController {
+class HomeCollectionViewController: CollectionViewController {
     
-    fileprivate let sectionInsets = UIEdgeInsets(
-      top: 15.0,
-      left: 15.0,
-      bottom: 40.0,
-      right: 15.0)
+    // MARK: Properties
     
-    let client = APIClient()
-    fileprivate let disposeBag = DisposeBag()
+    fileprivate let client = APIClient()
+    fileprivate var categories = [Category]()
+    
+    // MARK: Data Init
+    
+    fileprivate func initCategories() {
+        client.getCategories()
+            .subscribe(
+                onNext: { categories in
+                    guard let categories = categories else { return }
+                    self.categories = categories
+                    DispatchQueue.main.async { self.collectionView.reloadData() }
+                },
+                onError: { error in
+                    print("An error occurred while getting the categories:\n\(error)")
+                }
+            ).disposed(by: disposeBag)
+    }
+    
+    // MARK: View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        APIRequest.get(url: URL(string: APIEndpoints.getDrinksForSearchTerm("Negroni").urlString())!)
-//            .subscribe { data in
-//                do {
-//                    for drink in try JSONParser.decode(jsonData: data) { print(drink.name) }
-//                } catch {
-//                    print(error)
-//                }
-//            } onError: { error in
-//                print(error)
-//            } onCompleted: {
-//                print("Completed!")
-//            } onDisposed: {
-//                print("Disposed!")
-//            }
-//            .disposed(by: disposeBag)
-
-//        client.getDrink(with: "11007")
-//            .subscribe(
-//                onNext: { drinks in
-//                    print(drinks![0].name)
-//                },
-//                onError: { error in
-//                  print("Error: \(error)")
-//                }
-//            ).disposed(by: disposeBag)
-//        
-//        client.getDrinks(for: "Negroni").subscribe(
-//            onNext: { drinks in
-//                if let drinks = drinks { print(drinks[0]); } }
-//        ).disposed(by: disposeBag)
-
-//        client.getDrinkPreviews(category: "Ordinary_Drink").subscribe(
-//            onNext: { print($0) },
-//            onError: { print("Category Error\($0)") }
-//        ).disposed(by: disposeBag)
-//
-//        client.getDrinkPreviews(ingredient: "Vodksa").subscribe(
-//            onNext: { print($0) },
-//            onError: { print("Ingredient Error\($0)") }
-//        ).disposed(by: disposeBag)
-
-//        client.getIngredient(for: "Vodkas").subscribe(
-//            onNext: { print("*ingredient\n\(String(describing: $0))")},
-//            onError: { print("IIngredient Error\($0)") }
-//        ).disposed(by: disposeBag)
-        
-        client.getCategories().subscribe(
-            onNext: { print($0) }
-        ).disposed(by: disposeBag)
-//
-//        client.getIngredients().subscribe(
-//            onNext: { print($0) }
-//        ).disposed(by: disposeBag)
+        initCategories()
         
         title = "Home"
         collectionView.register(UINib(nibName: "HomeActionCollectionViewCell", bundle: nil),
@@ -85,17 +47,15 @@ class HomeCollectionViewController: UICollectionViewController {
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: HeaderCollectionReusableView.identifier)
     }
+}
 
-    /*
-    // MARK: - Navigation
+// MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+extension HomeCollectionViewController {
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        
     }
-    */
-
 }
 
 
@@ -114,7 +74,7 @@ extension HomeCollectionViewController {
             
         } else {
         // Browse Categories Section
-            return 3
+            return categories.count
         }
     }
 
@@ -134,7 +94,7 @@ extension HomeCollectionViewController {
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as! CategoryCollectionViewCell
 //            cell.lblTitle.text = "Fancy Category That Takes More Than 1 Line"
-            cell.lblTitle.text = "Fancy Category"
+            cell.lblTitle.text = categories[indexPath.row].name
             return cell
         }
     }
@@ -146,7 +106,14 @@ extension HomeCollectionViewController {
                   withReuseIdentifier: HeaderCollectionReusableView.identifier,
                   for: indexPath) as! HeaderCollectionReusableView
             
-            headerView.lblTitle.text = "Browse categories ajskdak jshasd aksjdh aks daks d"
+            if categories.isEmpty {
+                headerView.lblTitle.isHidden = true
+                headerView.activityIndicator.startAnimating()
+            } else {
+                headerView.lblTitle.isHidden = false
+                headerView.lblTitle.text = "Browse categories"
+                headerView.activityIndicator.stopAnimating()
+            }
             return headerView
         }
         fatalError()

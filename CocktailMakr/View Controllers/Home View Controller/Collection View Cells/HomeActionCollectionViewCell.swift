@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeActionCollectionViewCell: CollectionViewCell {
+class HomeActionCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var lblTitle: UILabel!
     @IBOutlet var imageView: UIImageView!
@@ -16,7 +16,7 @@ class HomeActionCollectionViewCell: CollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        super.setLayout()
+        super.setCustomLayout()
         lblTitle.adjustsFontSizeToFitWidth = true
     }
     

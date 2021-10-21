@@ -23,15 +23,26 @@
                     <color key="textColor" name="Main Text"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="t0I-cg-KCh">
+                    <rect key="frame" x="144" y="9" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="K1k-Sx-Yxr"/>
+                        <constraint firstAttribute="height" constant="32" id="Rhh-gu-l0h"/>
+                    </constraints>
+                    <color key="color" name="Main Text"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <constraints>
+                <constraint firstItem="t0I-cg-KCh" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="5RM-a5-TYJ"/>
                 <constraint firstItem="4AU-rF-9Nx" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="16" id="NJa-KE-s0x"/>
                 <constraint firstAttribute="trailing" secondItem="4AU-rF-9Nx" secondAttribute="trailing" constant="16" id="Q2d-bh-pwl"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="4AU-rF-9Nx" secondAttribute="bottom" id="YGq-2L-o4v"/>
+                <constraint firstItem="t0I-cg-KCh" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="jKm-Zp-VEF"/>
                 <constraint firstItem="4AU-rF-9Nx" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="u0L-3k-QyW"/>
             </constraints>
             <connections>
+                <outlet property="activityIndicator" destination="t0I-cg-KCh" id="f5Q-zf-UyD"/>
                 <outlet property="lblTitle" destination="4AU-rF-9Nx" id="yWA-ar-lE8"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>

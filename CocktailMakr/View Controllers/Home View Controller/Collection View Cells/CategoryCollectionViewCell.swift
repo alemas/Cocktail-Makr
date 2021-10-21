@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoryCollectionViewCell: CollectionViewCell {
+class CategoryCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var lblTitle: UILabel!
     
@@ -15,7 +15,7 @@ class CategoryCollectionViewCell: CollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        super.setLayout()
+        super.setCustomLayout()
         
         lblTitle.adjustsFontSizeToFitWidth = true
         

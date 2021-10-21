@@ -26,7 +26,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" name="Home Cell Background"/>
+            <color key="backgroundColor" name="Cell Background"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="D7T-Ie-lKq" secondAttribute="trailing" constant="20" id="AT2-ig-xop"/>
                 <constraint firstItem="D7T-Ie-lKq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="Owh-Tj-HMS"/>
@@ -41,7 +41,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <namedColor name="Home Cell Background">
+        <namedColor name="Cell Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

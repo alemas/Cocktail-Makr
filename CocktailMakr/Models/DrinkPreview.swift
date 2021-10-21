@@ -13,12 +13,12 @@ struct DrinkPreview {
     
     let id: String
     let name: String
-    let previewImageURL: String
+    let imageURL: URL?
     
     enum CodingKeys: String, CodingKey {
         case id = "idDrink"
         case name = "strDrink"
-        case previewImageURL = "strDrinkThumb"
+        case imageURL = "strDrinkThumb"
     }
 }
 
@@ -30,7 +30,7 @@ extension DrinkPreview: Decodable {
         
         id = try values.decode(String.self, forKey: CodingKeys.id)
         name = try values.decode(String.self, forKey: CodingKeys.name)
-        previewImageURL = try values.decode(String.self, forKey: CodingKeys.previewImageURL)
-            .appending("/preview")
+        imageURL = URL(string: try values.decode(String.self, forKey: CodingKeys.imageURL)
+            .appending("/preview"))
     }
 }

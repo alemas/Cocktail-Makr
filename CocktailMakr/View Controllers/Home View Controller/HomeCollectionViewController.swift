@@ -43,9 +43,6 @@ class HomeCollectionViewController: CollectionViewController {
                                 forCellWithReuseIdentifier: HomeActionCollectionViewCell.identifier)
         collectionView.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil),
                                 forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
-        collectionView.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil),
-                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                withReuseIdentifier: HeaderCollectionReusableView.identifier)
     }
 }
 
@@ -54,7 +51,15 @@ class HomeCollectionViewController: CollectionViewController {
 extension HomeCollectionViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if let selectedIndexPath = sender as? IndexPath {
+            if segue.identifier == "ShowDrinksForCategorySegue" {
+                let category = categories[selectedIndexPath.row]
+                let drinksCVC = segue.destination as! DrinksCollectionViewController
+                drinksCVC.title = category.name
+                drinksCVC.headerTitle = category.name
+                drinksCVC.drinksObservable = client.getDrinkPreviews(category: category.name)
+            }
+        }
     }
 }
 
@@ -126,6 +131,14 @@ extension HomeCollectionViewController {
 
 extension HomeCollectionViewController {
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            
+        } else {
+            performSegue(withIdentifier: "ShowDrinksForCategorySegue", sender: indexPath)
+        }
+    }
+    
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
@@ -145,16 +158,9 @@ extension HomeCollectionViewController {
 
 //MARK: UICollectionViewDelegateFlowLayout
 
-extension HomeCollectionViewController: UICollectionViewDelegateFlowLayout {
+extension HomeCollectionViewController {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemWidth: Double = ((view.frame.width - sectionInsets.left * 3) / 2)
-        let itemHeight: Double = indexPath.section == 0 ? itemWidth : itemWidth * 0.625
-        
-        return CGSize(width: itemWidth, height: itemHeight)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if section == 0 { return CGSize.zero }
         
         let width: Double = view.frame.width
@@ -163,11 +169,11 @@ extension HomeCollectionViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: height)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInsets
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemWidth: Double = ((view.frame.width - sectionInsets.left * 3) / 2)
+        let itemHeight: Double = indexPath.section == 0 ? itemWidth : itemWidth * 0.625
+        
+        return CGSize(width: itemWidth, height: itemHeight)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInsets.left
-    }
 }

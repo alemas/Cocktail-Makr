@@ -1,21 +1,63 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DrinkPreviewCollectionViewCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DrinkPreviewCollectionViewCell" id="gTV-IL-0wX" customClass="DrinkPreviewCollectionViewCell" customModule="CocktailMakr" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="140" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                <rect key="frame" x="0.0" y="0.0" width="140" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rg6-aY-SnO">
+                        <rect key="frame" x="10" y="10" width="120" height="120"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="Clw-iP-Wps"/>
+                            <constraint firstAttribute="width" secondItem="Rg6-aY-SnO" secondAttribute="height" multiplier="1:1" id="WSw-sq-5aQ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eK2-or-RY0">
+                        <rect key="frame" x="10" y="135" width="120" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="DCq-DM-mVf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" name="Cell Background"/>
+            <constraints>
+                <constraint firstItem="eK2-or-RY0" firstAttribute="top" secondItem="Rg6-aY-SnO" secondAttribute="bottom" constant="5" id="0cK-9k-ydr"/>
+                <constraint firstItem="Rg6-aY-SnO" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="QCc-Pe-6Wj"/>
+                <constraint firstAttribute="trailing" secondItem="eK2-or-RY0" secondAttribute="trailing" constant="10" id="d1m-er-Fps"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Rg6-aY-SnO" secondAttribute="trailing" constant="10" id="iiS-vF-Pjl"/>
+                <constraint firstItem="eK2-or-RY0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="oHG-PX-B2d"/>
+                <constraint firstAttribute="bottom" secondItem="eK2-or-RY0" secondAttribute="bottom" constant="15" id="qM1-r1-hKj"/>
+                <constraint firstItem="Rg6-aY-SnO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="qrC-kz-eaH"/>
+                <constraint firstItem="Rg6-aY-SnO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="vDn-HP-9gg"/>
+            </constraints>
+            <size key="customSize" width="15" height="60"/>
+            <connections>
+                <outlet property="imageView" destination="Rg6-aY-SnO" id="rbd-Ni-m8V"/>
+                <outlet property="lblTitle" destination="eK2-or-RY0" id="Sxm-M5-t6h"/>
+            </connections>
+            <point key="canvasLocation" x="-155.07246376811597" y="89.732142857142847"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="Cell Background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -50,7 +50,6 @@ extension APIClient {
     
     fileprivate func decodeAPIResponse<T: Decodable>(urlString: String, decodable: T.Type) -> Observable<T?> {
         let url = URL(string: urlString)!
-        print(url)
         return APIRequest.get(url: url).map { [self] data in
             guard let data = data else { return nil }
             if let rootData = parseRootArray(data: data) {

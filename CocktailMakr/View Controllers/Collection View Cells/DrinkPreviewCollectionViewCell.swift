@@ -17,8 +17,10 @@ class DrinkPreviewCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         super.setCustomLayout()
+        
         lblTitle.adjustsFontSizeToFitWidth = true
-        imageView.layer.cornerRadius = 3
+        imageView.layer.cornerRadius = layer.cornerRadius
+        imageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 
 }

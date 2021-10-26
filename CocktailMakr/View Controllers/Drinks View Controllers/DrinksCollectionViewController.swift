@@ -11,7 +11,7 @@ import SDWebImage
 
 class DrinksCollectionViewController: CollectionViewController {
 
-    // MARK: Properties
+    // MARK: - Properties
     
     fileprivate let client = APIClient()
     fileprivate var drinkPreviews =  [DrinkPreview]()
@@ -23,7 +23,7 @@ class DrinksCollectionViewController: CollectionViewController {
         }
     }
     
-    // MARK: Data Init
+    // MARK: - Data Init
     
     fileprivate func initDrinkPreviews() {
         guard let drinksObservable = drinksObservable else { return }
@@ -32,7 +32,7 @@ class DrinksCollectionViewController: CollectionViewController {
             onNext: { drinkPreviews in
                 guard let drinkPreviews = drinkPreviews else { return }
                 self.drinkPreviews = drinkPreviews
-                DispatchQueue.main.async { self.collectionView.reloadData() }
+                DispatchQueue.main.async { [weak self] in self?.collectionView.reloadData() }
             },
             onError: { error in
                 print("An error occurred while getting the drinks:\n\(error)")
@@ -40,29 +40,41 @@ class DrinksCollectionViewController: CollectionViewController {
         ).disposed(by: disposeBag)
     }
     
-    // MARK: View Life Cycle
+    // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sectionInsets = UIEdgeInsets(top: 15, left: 15, bottom: 40, right: 15)
+        sectionInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         
         collectionView.register(UINib(nibName: "DrinkPreviewCollectionViewCell", bundle: nil),
                                 forCellWithReuseIdentifier: DrinkPreviewCollectionViewCell.identifier)
     }
 }
 
-// MARK: UICollectionViewDataSource
+// MARK: - Navigation
+
+extension DrinksCollectionViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDrinkSegue" {
+            let drinkVC = segue.destination as! DrinkViewController
+            let indexPath = sender as! IndexPath
+            drinkVC.drinkObservable = client.getDrink(with: drinkPreviews[indexPath.row].id)
+        }
+    }
+    
+}
+
+// MARK: - UICollectionViewDataSource
 
 extension DrinksCollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return drinkPreviews.count
     }
 
@@ -96,41 +108,18 @@ extension DrinksCollectionViewController {
         }
         fatalError()
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }
 
-//MARK: UICollectionViewDelegateFlowLayout
+// MARK: - UICollectionViewDelegate
+
+extension DrinksCollectionViewController {
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowDrinkSegue", sender: indexPath)
+    }
+}
+
+//MARK: - UICollectionViewDelegateFlowLayout
 
 extension DrinksCollectionViewController {
     

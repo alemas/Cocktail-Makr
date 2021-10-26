@@ -33,7 +33,7 @@ extension CollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
         let width: Double = view.frame.width
-        let height: Double = 40
+        let height: Double = 80
         
         return CGSize(width: width, height: height)
     }

@@ -26,6 +26,8 @@
 		53894987271F435F0024DB5A /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53894985271F435E0024DB5A /* CategoryCollectionViewCell.xib */; };
 		53894990271F570F0024DB5A /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389498E271F570F0024DB5A /* HeaderCollectionReusableView.swift */; };
 		53894991271F570F0024DB5A /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5389498F271F570F0024DB5A /* HeaderCollectionReusableView.xib */; };
+		53A423262721B42000FEB1BB /* DrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A423252721B42000FEB1BB /* DrinkViewController.swift */; };
+		53A423292721BE3500FEB1BB /* Drink+CodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A423282721BE3500FEB1BB /* Drink+CodingKeys.swift */; };
 		53B4DA2127205FDB00A7E637 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B4DA2027205FDB00A7E637 /* APIClient.swift */; };
 		53B4DA232720650C00A7E637 /* DrinkPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B4DA222720650C00A7E637 /* DrinkPreview.swift */; };
 		53B4DA25272067C900A7E637 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B4DA24272067C900A7E637 /* Ingredient.swift */; };
@@ -84,6 +86,8 @@
 		53894985271F435E0024DB5A /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		5389498E271F570F0024DB5A /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		5389498F271F570F0024DB5A /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		53A423252721B42000FEB1BB /* DrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewController.swift; sourceTree = "<group>"; };
+		53A423282721BE3500FEB1BB /* Drink+CodingKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drink+CodingKeys.swift"; sourceTree = "<group>"; };
 		53B4DA2027205FDB00A7E637 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		53B4DA222720650C00A7E637 /* DrinkPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkPreview.swift; sourceTree = "<group>"; };
 		53B4DA24272067C900A7E637 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
@@ -201,6 +205,7 @@
 		53674E18271DE3B200E8B87A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				53A423272721BE0F00FEB1BB /* Extensions */,
 				53674E19271DE41000E8B87A /* Drink.swift */,
 				53B4DA222720650C00A7E637 /* DrinkPreview.swift */,
 				53B4DA24272067C900A7E637 /* Ingredient.swift */,
@@ -233,7 +238,7 @@
 				53894992271F5DAE0024DB5A /* Collection View Cells */,
 				5389498D271F56ED0024DB5A /* Collection View Headers */,
 				53674E27271E659300E8B87A /* Home View Controller */,
-				53B4DA322720F76E00A7E637 /* Drinks View Controller */,
+				53B4DA322720F76E00A7E637 /* Drinks View Controllers */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -321,6 +326,14 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		53A423272721BE0F00FEB1BB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				53A423282721BE3500FEB1BB /* Drink+CodingKeys.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		53B4DA272720DC2C00A7E637 /* Collection View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,12 +342,13 @@
 			path = "Collection View Controllers";
 			sourceTree = "<group>";
 		};
-		53B4DA322720F76E00A7E637 /* Drinks View Controller */ = {
+		53B4DA322720F76E00A7E637 /* Drinks View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				53B4DA332720F83700A7E637 /* DrinksCollectionViewController.swift */,
+				53A423252721B42000FEB1BB /* DrinkViewController.swift */,
 			);
-			path = "Drinks View Controller";
+			path = "Drinks View Controllers";
 			sourceTree = "<group>";
 		};
 		CD1C50EF46DB38D1598BC191 /* Pods */ = {
@@ -631,6 +645,8 @@
 				53B4DA342720F83700A7E637 /* DrinksCollectionViewController.swift in Sources */,
 				53894983271EFF2E0024DB5A /* UICollectionReusableView+Identifier.swift in Sources */,
 				5389497D271EF9710024DB5A /* HomeActionCollectionViewCell.swift in Sources */,
+				53A423292721BE3500FEB1BB /* Drink+CodingKeys.swift in Sources */,
+				53A423262721B42000FEB1BB /* DrinkViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,6 +837,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -851,6 +868,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

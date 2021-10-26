@@ -51,18 +51,16 @@ class HomeCollectionViewController: CollectionViewController {
 extension HomeCollectionViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let selectedIndexPath = sender as? IndexPath {
-            if segue.identifier == "ShowDrinksForCategorySegue" {
-                let category = categories[selectedIndexPath.row]
-                let drinksCVC = segue.destination as! DrinksCollectionViewController
-                drinksCVC.title = category.name
-                drinksCVC.headerTitle = category.name
-                drinksCVC.drinksObservable = client.getDrinkPreviews(category: category.name)
-            }
+        guard let selectedIndexPath = sender as? IndexPath else { return }
+        if segue.identifier == "ShowDrinksForCategorySegue" {
+            let category = categories[selectedIndexPath.row]
+            let drinksCVC = segue.destination as! DrinksCollectionViewController
+            drinksCVC.title = category.name
+            drinksCVC.headerTitle = category.name
+            drinksCVC.drinksObservable = client.getDrinkPreviews(category: category.name)
         }
     }
 }
-
 
 // MARK: UICollectionViewDataSource
 
@@ -98,7 +96,6 @@ extension HomeCollectionViewController {
             
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as! CategoryCollectionViewCell
-//            cell.lblTitle.text = "Fancy Category That Takes More Than 1 Line"
             cell.lblTitle.text = categories[indexPath.row].name
             return cell
         }
@@ -138,21 +135,6 @@ extension HomeCollectionViewController {
             performSegue(withIdentifier: "ShowDrinksForCategorySegue", sender: indexPath)
         }
     }
-    
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
 
 }
 

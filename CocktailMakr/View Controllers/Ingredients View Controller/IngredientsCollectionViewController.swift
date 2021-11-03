@@ -20,7 +20,10 @@ class IngredientsCollectionViewController: CollectionViewController {
     private func initIngredients() {
         client.getIngredientPreviews().subscribe(
             onNext: { ingredientPreviews in
-                guard let ingredientPreviews = ingredientPreviews else { return }
+                guard var ingredientPreviews = ingredientPreviews else { return }
+                ingredientPreviews.sort { lhs, rhs in
+                    return lhs.name < rhs.name
+                }
                 self.ingredientPreviews = ingredientPreviews
                 DispatchQueue.main.async { [weak self] in self?.collectionView.reloadData() }
             },
@@ -44,7 +47,19 @@ class IngredientsCollectionViewController: CollectionViewController {
 
 // MARK: - Navigation
 
-
+extension IngredientsCollectionViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDrinksWithIngredientSegue" {
+            let drinksVC = segue.destination as! DrinksCollectionViewController
+            let indexPath = sender as! IndexPath
+            let ingredientName = ingredientPreviews[indexPath.row].name
+            drinksVC.drinksObservable = client.getDrinkPreviews(ingredient: ingredientName)
+            drinksVC.headerTitle = "Drinks with \(ingredientPreviews[indexPath.row].name)"
+        }
+    }
+    
+}
 
 // MARK: - UICollectionViewDataSource
 
@@ -87,6 +102,15 @@ extension IngredientsCollectionViewController {
             return headerView
         }
         fatalError()
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension IngredientsCollectionViewController {
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowDrinksWithIngredientSegue", sender: indexPath)
     }
 }
 

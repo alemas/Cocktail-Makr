@@ -27,7 +27,6 @@ extension IngredientPreview: Decodable {
         
         name = try values.decode(String.self, forKey: CodingKeys.name)
         let nameURL = name.replacingOccurrences(of: " ", with: "%20")
-        if name == "Añejo rum" { print(nameURL) }
         imageURL = URL(string: API.baseIngredientImageURL.appending("\(nameURL)-Small.png"))
     }
 }

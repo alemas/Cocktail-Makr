@@ -83,10 +83,10 @@ extension APIClient {
             decodable: [DrinkPreview].self)
     }
 
-    func getIngredients() -> Observable<[String]?> {
+    func getIngredientPreviews() -> Observable<[IngredientPreview]?> {
         return decodeAPIResponse(
-            urlString: APIEndpoints.getIngredients.urlString(),
-            decodable: [String].self)
+            urlString: APIEndpoints.getIngredientPreviews.urlString(),
+            decodable: [IngredientPreview].self)
     }
 
     func getIngredient(for searchTerm: String) -> Observable<[Ingredient]?> {

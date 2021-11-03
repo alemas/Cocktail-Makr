@@ -26,6 +26,10 @@
 		53894987271F435F0024DB5A /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53894985271F435E0024DB5A /* CategoryCollectionViewCell.xib */; };
 		53894990271F570F0024DB5A /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389498E271F570F0024DB5A /* HeaderCollectionReusableView.swift */; };
 		53894991271F570F0024DB5A /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5389498F271F570F0024DB5A /* HeaderCollectionReusableView.xib */; };
+		539EE3402728417C00643802 /* IngredientsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539EE33F2728417C00643802 /* IngredientsCollectionViewController.swift */; };
+		539EE342272843E700643802 /* IngredientPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539EE341272843E700643802 /* IngredientPreview.swift */; };
+		539EE346272870A000643802 /* IngredientPreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539EE344272870A000643802 /* IngredientPreviewCollectionViewCell.swift */; };
+		539EE347272870A000643802 /* IngredientPreviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 539EE345272870A000643802 /* IngredientPreviewCollectionViewCell.xib */; };
 		53A423262721B42000FEB1BB /* DrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A423252721B42000FEB1BB /* DrinkViewController.swift */; };
 		53A423292721BE3500FEB1BB /* Drink+CodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A423282721BE3500FEB1BB /* Drink+CodingKeys.swift */; };
 		53B4DA2127205FDB00A7E637 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B4DA2027205FDB00A7E637 /* APIClient.swift */; };
@@ -86,6 +90,10 @@
 		53894985271F435E0024DB5A /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		5389498E271F570F0024DB5A /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		5389498F271F570F0024DB5A /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		539EE33F2728417C00643802 /* IngredientsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsCollectionViewController.swift; sourceTree = "<group>"; };
+		539EE341272843E700643802 /* IngredientPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientPreview.swift; sourceTree = "<group>"; };
+		539EE344272870A000643802 /* IngredientPreviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientPreviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		539EE345272870A000643802 /* IngredientPreviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientPreviewCollectionViewCell.xib; sourceTree = "<group>"; };
 		53A423252721B42000FEB1BB /* DrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewController.swift; sourceTree = "<group>"; };
 		53A423282721BE3500FEB1BB /* Drink+CodingKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drink+CodingKeys.swift"; sourceTree = "<group>"; };
 		53B4DA2027205FDB00A7E637 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -209,6 +217,7 @@
 				53674E19271DE41000E8B87A /* Drink.swift */,
 				53B4DA222720650C00A7E637 /* DrinkPreview.swift */,
 				53B4DA24272067C900A7E637 /* Ingredient.swift */,
+				539EE341272843E700643802 /* IngredientPreview.swift */,
 				53B4DA302720F36F00A7E637 /* Category.swift */,
 			);
 			path = Models;
@@ -238,6 +247,7 @@
 				53894992271F5DAE0024DB5A /* Collection View Cells */,
 				5389498D271F56ED0024DB5A /* Collection View Headers */,
 				53674E27271E659300E8B87A /* Home View Controller */,
+				539EE33E2728414100643802 /* Ingredients View Controller */,
 				53B4DA322720F76E00A7E637 /* Drinks View Controllers */,
 			);
 			path = "View Controllers";
@@ -324,6 +334,24 @@
 				53B4DA2027205FDB00A7E637 /* APIClient.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		539EE33E2728414100643802 /* Ingredients View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				539EE3432728707700643802 /* Collection View Cells */,
+				539EE33F2728417C00643802 /* IngredientsCollectionViewController.swift */,
+			);
+			path = "Ingredients View Controller";
+			sourceTree = "<group>";
+		};
+		539EE3432728707700643802 /* Collection View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				539EE344272870A000643802 /* IngredientPreviewCollectionViewCell.swift */,
+				539EE345272870A000643802 /* IngredientPreviewCollectionViewCell.xib */,
+			);
+			path = "Collection View Cells";
 			sourceTree = "<group>";
 		};
 		53A423272721BE0F00FEB1BB /* Extensions */ = {
@@ -478,6 +506,7 @@
 				53894987271F435F0024DB5A /* CategoryCollectionViewCell.xib in Resources */,
 				53894980271EF9E80024DB5A /* Colors.xcassets in Resources */,
 				53674DF5271DE28E00E8B87A /* LaunchScreen.storyboard in Resources */,
+				539EE347272870A000643802 /* IngredientPreviewCollectionViewCell.xib in Resources */,
 				53B4DA2F2720ECD300A7E637 /* DrinkPreviewCollectionViewCell.xib in Resources */,
 				53674DF2271DE28E00E8B87A /* Assets.xcassets in Resources */,
 				5389497E271EF9710024DB5A /* HomeActionCollectionViewCell.xib in Resources */,
@@ -632,11 +661,14 @@
 				53B4DA25272067C900A7E637 /* Ingredient.swift in Sources */,
 				53894990271F570F0024DB5A /* HeaderCollectionReusableView.swift in Sources */,
 				53B4DA312720F36F00A7E637 /* Category.swift in Sources */,
+				539EE346272870A000643802 /* IngredientPreviewCollectionViewCell.swift in Sources */,
+				539EE342272843E700643802 /* IngredientPreview.swift in Sources */,
 				53B4DA292720DC4800A7E637 /* CollectionViewController.swift in Sources */,
 				53B4DA2127205FDB00A7E637 /* APIClient.swift in Sources */,
 				53674DE9271DE28D00E8B87A /* AppDelegate.swift in Sources */,
 				53B4DA232720650C00A7E637 /* DrinkPreview.swift in Sources */,
 				53674E29271E69EB00E8B87A /* HomeCollectionViewController.swift in Sources */,
+				539EE3402728417C00643802 /* IngredientsCollectionViewController.swift in Sources */,
 				53EC614E271FB4CD00D3D769 /* APIRequest.swift in Sources */,
 				53674DEB271DE28D00E8B87A /* SceneDelegate.swift in Sources */,
 				53894986271F435F0024DB5A /* CategoryCollectionViewCell.swift in Sources */,

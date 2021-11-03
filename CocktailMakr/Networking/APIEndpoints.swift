@@ -13,7 +13,7 @@ enum APIEndpoints {
     case getDrinksForSearchTerm(String)
     case getDrinkPreviewsForIngredient(String)
     case getDrinkPreviewsForCategory(String)
-    case getIngredients
+    case getIngredientPreviews
     case getIngredientForSearchTerm(String)
     case getCategories
     
@@ -27,7 +27,7 @@ enum APIEndpoints {
             return composeURL(path: "/filter.php", params: ["i": ingredient])
         case .getDrinkPreviewsForCategory(let category):
             return composeURL(path: "/filter.php", params: ["c": category])
-        case .getIngredients:
+        case .getIngredientPreviews:
             return composeURL(path: "/list.php", params: ["i": "list"])
         case .getIngredientForSearchTerm(let searchTerm):
             return composeURL(path: "/search.php", params: ["i": searchTerm])

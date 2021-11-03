@@ -11,8 +11,6 @@ struct Ingredient {
     
     // MARK: Properties
     
-    fileprivate let baseImageURL = "www.thecocktaildb.com/images/ingredients/"
-    
     let name: String
     let description: String
     let type: String
@@ -55,7 +53,7 @@ extension Ingredient {
     }
     
     func imageURL(size: ImageSize) -> URL? {
-        let urlString = baseImageURL.appending("\(size.rawValue)-\(name).png")
+        let urlString = API.baseIngredientImageURL.appending("\(size.rawValue)-\(name).png")
         return URL(string: urlString)
     }
     

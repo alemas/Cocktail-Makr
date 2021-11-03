@@ -130,7 +130,9 @@ extension HomeCollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            
+            if indexPath.row == 1 {
+                performSegue(withIdentifier: "ShowIngredientsSegue", sender: nil)
+            }
         } else {
             performSegue(withIdentifier: "ShowDrinksForCategorySegue", sender: indexPath)
         }

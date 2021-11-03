@@ -80,11 +80,38 @@
                     <navigationItem key="navigationItem" id="9i0-uu-vAI"/>
                     <connections>
                         <segue destination="sFN-li-GYs" kind="show" identifier="ShowDrinksForCategorySegue" id="DVz-Hb-EnW"/>
+                        <segue destination="hVa-cq-2an" kind="show" identifier="ShowIngredientsSegue" id="mRk-Us-aFq"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aeB-yD-Txf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1849" y="125"/>
+        </scene>
+        <!--Ingredients Collection View Controller-->
+        <scene sceneID="vFP-QT-QW4">
+            <objects>
+                <collectionViewController id="hVa-cq-2an" customClass="IngredientsCollectionViewController" customModule="CocktailMakr" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="2Xx-yU-RqN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="View Controller Background"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HEE-mH-A3k">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="hVa-cq-2an" id="txP-gt-cu9"/>
+                            <outlet property="delegate" destination="hVa-cq-2an" id="k8v-o5-sa4"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="vlM-go-U9i"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KZq-Zi-Xrb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2987" y="125"/>
         </scene>
         <!--Drinks Collection View Controller-->
         <scene sceneID="9lJ-xN-ySL">
@@ -113,7 +140,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ezx-Tt-Tak" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2972" y="595"/>
+            <point key="canvasLocation" x="2988" y="930"/>
         </scene>
         <!--Drink View Controller-->
         <scene sceneID="QG6-fi-vM2">
@@ -250,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Le-Jl-kgw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4092.753623188406" y="594.64285714285711"/>
+            <point key="canvasLocation" x="4110" y="930"/>
         </scene>
     </scenes>
     <resources>

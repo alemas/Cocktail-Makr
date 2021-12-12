@@ -9,5 +9,5 @@ import UIKit
 
 @objc
 extension UICollectionReusableView {
-    open class var identifier: String { "Cell" }
+    class var identifier: String { "Cell" }
 }

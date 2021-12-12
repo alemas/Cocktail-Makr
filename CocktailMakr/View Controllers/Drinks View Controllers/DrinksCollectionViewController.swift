@@ -45,6 +45,8 @@ class DrinksCollectionViewController: CollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let searchController = UISearchController()
+        
         sectionInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         
         collectionView.register(UINib(nibName: "DrinkPreviewCollectionViewCell", bundle: nil),

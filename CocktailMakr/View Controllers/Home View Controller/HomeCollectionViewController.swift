@@ -39,6 +39,7 @@ class HomeCollectionViewController: CollectionViewController {
         initCategories()
         
         title = "Home"
+        navigationItem.backButtonTitle = ""
         collectionView.register(UINib(nibName: "HomeActionCollectionViewCell", bundle: nil),
                                 forCellWithReuseIdentifier: HomeActionCollectionViewCell.identifier)
         collectionView.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil),
@@ -130,7 +131,9 @@ extension HomeCollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            if indexPath.row == 1 {
+            if indexPath.row == 0 {
+                performSegue(withIdentifier: "ShowSearchDrinksSegue", sender: nil)
+            } else {
                 performSegue(withIdentifier: "ShowIngredientsSegue", sender: nil)
             }
         } else {
